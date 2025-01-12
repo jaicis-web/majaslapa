@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produkti - Apģērbu Veikals</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="products-page">
+    <!-- Navigācijas josla -->
+    <nav>
+        <div class="nav-content">
+            <h1 style="font-size: 2vw;">Apģērbi no Vācijas</h1>
+            <div class="nav-links">
+                <a href="index.html"><p style="font-size: 1.3vw;">Sākums</p></a>
+                <a href="products.html" class="active"><p style="font-size: 1.3vw;">Apģērbi</p></a>
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒 <span id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Groza pārklājums (overlay) -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+
+    <!-- Iepirkumu groza sānu josla -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <h2>Iepirkumu grozs</h2>
+        <div id="cart-items"></div>
+        <div class="cart-total">
+            <p>Kopā: <span id="cart-total">€0.00</span></p>
+            <button onclick="checkout()">Pasūtīt</button>
+        </div>
+    </div>
+
+    <!-- Galvenā satura daļa -->
+    <main>
+        <!-- Filtru sekcija -->
+        <section class="filters">
+            <h2>Filtri</h2>
+            <select id="category-filter" onchange="filterProducts()">
+                <option value="all">Visas kategorijas</option>
+                <option value="shirts">Krekli</option>
+                <option value="pants">Bikses</option>
+                <option value="jackets">Jakas</option>
+            </select>
+            <select id="price-filter" onchange="filterProducts()">
+                <option value="all">Visas cenas</option>
+                <option value="0-30">€0 - €30</option>
+                <option value="31-70">€31 - €70</option>
+                <option value="71-120">€71-€120</option>
+            </select>
+        </section>
+
+        <!-- Produktu attēlošanas sekcija -->
+        <section id="products" class="products">
+        
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <p>&copy;2025 Matīss Balodis</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript faila pievienošana -->
+    <script src="script.js"></script>
+</body>
+</html>
